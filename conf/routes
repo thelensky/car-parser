@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.CarController.default()
+
+#List all cars
+GET     /api/cars                   controllers.CarController.listCars(gosnumber: Option[String], mark: Option[String], color: Option[String], year: Option[Int])
+
+#Static data about db
+GET     /api/statistics             controllers.CarController.statics()
+
+#Add Car to db
++ nocsrf
+POST    /api/car                    controllers.CarController.createCar()
+
+#Remove Car from db
+DELETE  /api/car/:id                controllers.CarController.deleteCar(id:Long)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
