@@ -1,12 +1,12 @@
 
-git colone https://github.com/thelensky/car-parser/
-cd car-parser
-sbt run
+git colone https://github.com/thelensky/car-parser/ \n
+cd car-parser \n
+sbt run \n 
 
-#Add Car to db POST /api/car
-curl --header "Content-Type: application/json" \
+#Add Car to db POST /api/car 
+curl --header "Content-Type: application/json" \ 
   --request POST \
-  --data '{"gosNumber": "A000AA", "mark":"Reno", "year": 2020, "color":"yellow"}' \
+  --data '{"gosNumber": "A000AA", "mark":"Reno", "year": 2020, "color":"yellow"}' \ 
   http://localhost:9000/api/car
 
 #List all cars GET /api/cars
